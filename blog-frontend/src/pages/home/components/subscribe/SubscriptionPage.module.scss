@@ -1,0 +1,119 @@
+.subscriptionSection{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  p{
+    color: var(--primary-color);
+    font-weight: bold;
+
+  }
+
+  h1{
+    margin: 0;
+    font-size: 48px;
+  }
+}
+.subTitle{
+  color: var(--secondary-color) !important;
+  font-size: 20px;
+}
+.privacyPolicy{
+  color: var(--secondary-color) !important;
+  span{
+    color: var(--primary-color);
+  }
+  order: 3;
+}
+.emailSubscribeForm{
+  display: flex;
+  flex-direction: row;
+  width: 30vw ;
+  height: 40px;
+
+  input{
+    width: 60%;
+    border-radius: 5px;
+    border: var(--secondary-color) 1px solid;
+    order: 1;
+
+  }
+}
+
+.subscribeEmailButton{
+  margin-left: 10px;
+  background-color: var(--primary-color);
+  color: white;
+  width: 25%;
+  border-radius: 5px;
+  border: var(--secondary-color) 1px solid;
+  order: 2;
+}
+
+
+@media only screen and (max-width: 1200px) {
+  .subscriptionSection{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    p{
+      color: var(--primary-color);
+      font-weight: bold;
+  
+    }
+  
+    h1{
+      margin: 0;
+      font-size: 24px;
+      text-align: center;
+    }
+  }
+
+  .subTitle{
+    color: var(--secondary-color) !important;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .privacyPolicy{
+    color: var(--secondary-color) !important;
+    span{
+      color: var(--primary-color);
+    }
+    font-size: 12px;
+    width: fit-content;
+    line-height: 20px;
+    margin: 0;
+
+  }
+  .emailSubscribeForm{
+    display: flex;
+    flex-direction: column;
+    width: 100% ;
+    gap: 10px;
+    height: 138px;
+
+  
+    input{
+      width: 100%;
+      border-radius: 8px;
+      border: var(--secondary-color) 1px solid;
+      height: 48px;
+
+    }
+  }
+  
+  .subscribeEmailButton{
+    background-color: var(--primary-color);
+    color: white;
+    width: 100%;
+    border-radius: 5px;
+    border: var(--secondary-color) 1px solid;
+    height: 48px;
+    margin: 0;
+
+  }
+}

@@ -1,0 +1,13 @@
+.chipContainer{
+  background-color: rgba(var(--chip-color), 0.2);
+  border-radius: 16px;
+  width: fit-content;
+
+}
+.chipTitle{
+  padding: 5px 10px;
+  font-size: 14px;
+  margin: 0;
+  font-weight: bold;
+  color: rgba(var(--chip-color), 1);
+}

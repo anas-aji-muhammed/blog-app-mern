@@ -1,0 +1,58 @@
+.signUpFormContainer{
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.signUpForm{
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;    
+
+  
+    input{
+      width: 100%;
+      border-radius: 8px;
+      border: var(--secondary-color) 1px solid;
+      height: 48px;
+      padding-left: 10px;
+    }
+  }
+  
+  .signupEmailButton{
+    background-color: var(--primary-color);
+    color: white;
+    width: 100%;
+    border-radius: 5px;
+    border: var(--secondary-color) 1px solid;
+    height: 48px;
+    margin: 0;
+  }
+
+  .logInCancelButtonContainer{
+    display: flex;
+    flex-direction: row;
+    width: 30vw;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .logInButton{
+    background-color: var(--primary-color);
+    color: white;
+    width: fit-content;
+    border-radius: 5px;
+    border: var(--secondary-color) 1px solid;
+    height: 48px;
+    margin: 0;
+    padding: 10px 30px;
+  }
+
+  .cancelButton{
+    font-weight: 600;
+    padding: 10px 30px;
+
+  }

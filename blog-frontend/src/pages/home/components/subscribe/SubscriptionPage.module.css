@@ -1,0 +1,50 @@
+.subscriptionSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+}
+.subscriptionSection p {
+  color: var(--primary-color);
+  font-weight: bold;
+}
+.subscriptionSection h1 {
+  margin: 0;
+  font-size: 48px;
+}
+
+.subTitle {
+  color: var(--secondary-color) !important;
+  font-size: 20px;
+}
+
+.privacyPolicy {
+  color: var(--secondary-color) !important;
+}
+.privacyPolicy span {
+  color: var(--primary-color);
+}
+
+.emailSubscribeForm {
+  display: flex;
+  flex-direction: row;
+  width: 30vw;
+  height: 40px;
+}
+.emailSubscribeForm input {
+  width: 60%;
+  border-radius: 5px;
+  border: var(--secondary-color) 1px solid;
+}
+
+.subscribeEmailButton {
+  margin-left: 10px;
+  background-color: var(--primary-color);
+  color: white;
+  width: 25%;
+  border-radius: 5px;
+  border: var(--secondary-color) 1px solid;
+}
+
+/*# sourceMappingURL=SubscriptionPage.module.css.map */

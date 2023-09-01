@@ -1,0 +1,11 @@
+.recentBlogSection {
+  height: 80vh;
+}
+
+.recentBlogsGrid {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+/*# sourceMappingURL=RecentBlogSection.module.css.map */

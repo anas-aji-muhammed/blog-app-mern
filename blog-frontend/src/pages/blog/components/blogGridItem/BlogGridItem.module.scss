@@ -1,0 +1,27 @@
+.blogGridItemContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 428px;
+  width: 100%;
+}
+
+.blogGridImage{
+  height: 240px;
+  border-radius: 16px;
+  //border: #333333 .1px solid;
+  margin: 0;
+  padding-bottom: 5px;
+
+}
+.authorAndDate{
+  color: var(--primary-color);
+  margin: 0;
+}
+
+.blogTitle{
+  margin: 0;
+}
+.blogSubTitle{
+
+}

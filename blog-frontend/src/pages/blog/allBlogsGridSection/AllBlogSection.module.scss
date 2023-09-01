@@ -1,0 +1,25 @@
+.allBlogSection{
+  padding: 0;
+  margin: 0;
+
+}
+
+.allBlogsGrid{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(50px, 1fr));
+  row-gap: 20px;
+  column-gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+@media only screen and (max-width: 1200px){
+  .allBlogsGrid{
+    display: grid;
+    grid-template-columns: repeat(1, minmax(50px, 1fr));
+    row-gap: 20px;
+    column-gap: 20px;
+    padding: 0;
+    margin: 0;
+  }
+}

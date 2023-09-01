@@ -1,0 +1,51 @@
+.navBar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 44px ;
+  padding-top: 10px;
+
+}
+.loginButton{
+  text-decoration: none ;
+  color: var(--secondary-color);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.navBarLinksGroup{
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 10px;
+}
+
+.signupButton{
+  font-size: 16px;
+  text-decoration: none ;
+  background-color: var(--primary-color);
+  text-align: center;
+  color: white;
+  font-weight: normal;
+  padding: 6px;
+  width: 60px;
+  height: 30px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mobileNavbarMenu{
+  display: none;
+}
+
+@media only screen and (max-width: 1200px){
+  .navBarLinksGroup{
+    display: none;
+  }
+  .mobileNavbarMenu{
+    display:flex;
+  }
+}
