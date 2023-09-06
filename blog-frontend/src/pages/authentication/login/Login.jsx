@@ -50,7 +50,7 @@ export default function Login() {
                 <button className={styles.loginEmailButton}>Login</button>
             </form>
             <h3>Or</h3>
-            <p>Login with</p>
+            <p>Login with google coming soon</p>
             <p>Don't have an account?</p>
             <div className={styles.signupCancelButtonContainer}>
             <button onClick={()=>navigate('/signup', {replace: true})} className={styles.signupButton}>Signup</button>

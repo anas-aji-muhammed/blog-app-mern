@@ -4,6 +4,7 @@ const jwt = require('jsonwebtoken');
 
 const secretKey = process.env.SECRET_KEY;
 
+///API controller for signup
 exports.registerController = async (req, res) => {
     const {email, username, password}  =req.body;
     const userDoc = await User.create({email,username, password}).then((dbResponse)=>{
@@ -20,6 +21,7 @@ exports.registerController = async (req, res) => {
     
   }
 
+  ///API controller for login
 exports.logInController =  async (req, res)=>{
     const {email, password}  =req.body;
     const userDoc = await User.findOne({email}).then((dbResponse)=>{
@@ -49,38 +51,64 @@ exports.logInController =  async (req, res)=>{
   
   }
 
+///API controller for getting user info
 exports.userProfileController = (req, res)=>{
     const prevToken = req.cookies['token'];
+    getUserDetailsFromToken(prevToken).then((response)=>{
+      if(response["valid"] === true){
+        res.status(200).cookie('token', prevToken).json({"reqStatus":true, "username": response.user});
+      }
+      else{
+        res.status(200).json({"reqStatus":false});
+      }
+    });
    
-   //  console.log('token--' + token['token'])
-   // res.status(200).cookie('token', prevToken, { expires: new Date(0)}).json({"reqStatus":false});
-    jwt.verify(prevToken, secretKey, {}, (err, token)=>{
-     // console.log('err' + err);
-     // console.log('token ' + token);
-     const {email, username}  =token;
-         console.log('email ' + email);
-         console.log('username ' + username);
- 
-     User.findOne({email}).then((dbResponse)=>{
-       if(dbResponse!=null){
-         if (err) {
-           res.status(200).json({"reqStatus":false});
-         }
-         else{
-           res.status(200).cookie('token', prevToken).json({"reqStatus":true, "username": username});
-         }
-       }
-       else{
-         res.status(200).json({"reqStatus":false});
-       }
-     })
- 
-     
-    })
+    
  }
 
+ ///Logout and clear cookie
  exports.logoutController = async (req, res) => {
     const prevToken = req.cookies['token'];
   
     res.status(200).cookie('token', prevToken, { expires: new Date(0)}).json({"reqStatus":true});
   }
+
+  /// For verifying jwt and getting the user details
+  async function getUserDetailsFromToken(token)  {
+    try{
+      var decodedToken = jwt.verify(token, secretKey)
+      const {email, username, id}  = decodedToken;
+      console.log('email ' + email);
+      console.log('username ' + username);
+      console.log('id ' + id);
+      try {
+        const dbResponse = await User.findOne({ email });
+        
+        if (dbResponse !== null) {
+          return {
+            valid: true,
+            dbResponse: dbResponse,
+            id: dbResponse._id, 
+            user: dbResponse.username
+          };
+        } else {
+          return {
+            valid: false
+          };
+        }
+      } catch (err) {
+        console.error("Error:", err);
+        return {
+          valid: false
+        };
+      }
+
+    }
+    catch(err){
+      return {
+        valid: false
+      };
+    }
+          
+};
+exports.getUserDetailsFromToken = getUserDetailsFromToken;

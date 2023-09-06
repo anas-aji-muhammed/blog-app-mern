@@ -20,7 +20,7 @@ export default function SignUp() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ 
         "email": email, "username": username, "password": password }),
-    })
+    }) 
   .then((response) =>{ 
     console.log(response)
     if(response.status===400){

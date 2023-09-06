@@ -3,6 +3,8 @@ import HomePage from "./pages/home/HomePage";
 import SignUp from "./pages/authentication/signup/SignUp";
 import Login from "./pages/authentication/login/Login";
 import CreateBlogPage from "./pages/blog/createBlog/CreateBlogPage";
+import BlogDetails from "./pages/blog/components/blogDetails/BlogDetails"
+import './utils/globalStyles.css'
 
 
 function App() {
@@ -13,7 +15,7 @@ function App() {
         <Route path='/Signup' element={<SignUp/>}></Route>
         <Route path='/login' element={<Login/>}></Route>
         <Route path='/create' element={<CreateBlogPage/>}></Route>
-
+        <Route path='/blogDetails' element={<BlogDetails/>}></Route>
 
       </Routes>
     </>

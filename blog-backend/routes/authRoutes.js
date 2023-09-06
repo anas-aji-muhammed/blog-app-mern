@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.post("/signup", registerController);
 router.post("/login", logInController);
-router.post("/userProfile", userProfileController);
+router.get("/userProfile", userProfileController);
 router.post("/logout", logoutController);
 
 

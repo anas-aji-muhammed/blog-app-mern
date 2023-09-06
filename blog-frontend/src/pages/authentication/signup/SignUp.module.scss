@@ -56,3 +56,24 @@
     padding: 10px 30px;
 
   }
+
+  
+  @media only screen and (max-width: 1000px){
+
+    .signUpForm{
+      width: 80vw;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;    
+  
+    
+      input{
+        width: 100%;
+        border-radius: 8px;
+        border: var(--secondary-color) 1px solid;
+        height: 48px;
+        padding-left: 10px;
+      }
+    }
+    
+  }

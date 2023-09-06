@@ -1,11 +1,11 @@
 require('dotenv').config();
-
-const mongoose = require('mongoose');
-const express = require('express')
-const cors = require('cors')
-
-var cookieParser = require('cookie-parser')
+const express = require('express');
+const cors = require('cors');
+var cookieParser = require('cookie-parser');
 const authRoute = require('./routes/authRoutes');
+const blogsRouteRoute = require('./routes/blogRoutes');
+const {mongoDBConnection} = require('./utils/db_init');
+
 
 
 const app = express()
@@ -14,10 +14,11 @@ app.use(cookieParser())
 app.use(cors({credentials: true, origin: "http://localhost:3000"}))
 app.use(express.json())
 
-
-mongoose.connect('mongodb+srv://anasajeeb2:BRhavbu8ksw7nqaz@cluster0.os8p674.mongodb.net/?retryWrites=true&w=majority').then((response)=>console.log("successfully connectted to db"))
+mongoDBConnection();
 
 app.use('/', authRoute);
+app.use('/', blogsRouteRoute);
+
 
 
 app.listen(port, () => {
