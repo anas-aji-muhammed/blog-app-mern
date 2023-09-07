@@ -14,7 +14,7 @@ app.use(cookieParser())
 app.use(cors({credentials: true, origin: "http://localhost:3000"}))
 app.use(express.json())
 
-mongoDBConnection();
+// mongoDBConnection();
 
 app.use('/', authRoute);
 app.use('/', blogsRouteRoute);
@@ -32,6 +32,3 @@ mongoose.connect(process.env.MONGODB_URL)(err => {
 
 
 
-///mongo pass - BRhavbu8ksw7nqaz
-/// user- anasajeeb2
-// mongodb+srv://anasajeeb2:<password>@cluster0.os8p674.mongodb.net/?retryWrites=true&w=majority
