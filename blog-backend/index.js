@@ -21,7 +21,7 @@ app.use('/', blogsRouteRoute);
 
 
 
-app.listen(port, () => {
+app.listen(process.env.PORT || port, () => {
   console.log(`Blog app listening on port ${port}`)
 })
 
