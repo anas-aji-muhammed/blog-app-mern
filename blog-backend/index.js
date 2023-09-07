@@ -11,7 +11,7 @@ const {mongoDBConnection} = require('./utils/db_init');
 const app = express()
 const port = 4000
 app.use(cookieParser())
-app.use(cors({credentials: true, origin: "https://blog-app-mern-ihzym7pme-anas-aji-muhammed.vercel.app"}))
+app.use(cors({credentials: true, origin: "https://blog-app-mern-three.vercel.app/"}))
 // app.use(cors({credentials: true, origin: "http://localhost:3000"}))
 app.use(express.json())
 
