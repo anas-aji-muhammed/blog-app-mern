@@ -20,10 +20,16 @@ app.use('/', authRoute);
 app.use('/', blogsRouteRoute);
 
 
+mongoose.connect(process.env.MONGODB_URL)(err => {
+  if(err){ console.error(err); return false;}
+  app.listen(process.env.PORT || port, () => {
+    console.log(`Blog app listening on port ${port}`)
+  })
+});
 
-app.listen(process.env.PORT || port, () => {
-  console.log(`Blog app listening on port ${port}`)
-})
+
+
+
 
 
 ///mongo pass - BRhavbu8ksw7nqaz
