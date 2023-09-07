@@ -14,7 +14,9 @@ app.use(cookieParser())
 app.use(cors({credentials: true, origin: "http://localhost:3000"}))
 app.use(express.json())
 
-
+app.get('/', (req, res)=>{
+  res.send("Hii we are live");
+})
 app.use('/', authRoute);
 app.use('/', blogsRouteRoute);
 
